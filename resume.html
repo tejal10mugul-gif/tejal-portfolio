@@ -5,221 +5,136 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tejal Mugul — Strategy & Market Intelligence Consultant</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ══ PRINT ══ */
+
 @page { size: A4; margin: 0; }
+
 @media print {
-  html, body { width: 210mm; height: 297mm; margin: 0 !important; padding: 0 !important; background: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .page { width: 210mm !important; height: 297mm !important; box-shadow: none !important; margin: 0 !important; overflow: hidden !important; }
+  html, body {
+    width: 210mm; height: 297mm;
+    margin: 0 !important; padding: 0 !important;
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    width: 210mm !important;
+    margin: 0 !important;
+    padding: 12px 34px 10px !important;
+    box-shadow: none !important;
+  }
+  a { color: inherit !important; text-decoration: none !important; }
 }
 
-/* ══ VARIABLES ══ */
 :root {
-  --navy:    #0B1929;
-  --blue:    #1A4F8A;
-  --blue-md: #2563A8;
-  --pale:    #EBF3FB;
-  --pale2:   #C8DDEF;
-  --white:   #FFFFFF;
-  --ink:     #1C2B3A;
-  --muted:   #4E6A84;
-  --border:  #C3D6EB;
-  --sidebar: #F5F9FD;
-  --green:   #166534;
-  --green-bg:#DCFCE7;
-  --green-bd:#86EFAC;
+  --navy:    #0C1E33;
+  --blue-lt: #2563A8;
+  --pale:    #EDF4FC;
+  --border:  #C9D9EE;
+  --ink:     #1A2A3A;
+  --sub:     #3D5775;
+  --muted:   #6080A0;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'DM Sans', sans-serif;
-  background: #d6dfe8;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 8.8px;
+  color: var(--ink);
+  background: #cdd5df;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
 
-/* ATS hidden text */
-.ats-text {
-  position: absolute;
-  left: -9999px;
-  font-size: 1px;
-  color: transparent;
-  user-select: none;
-  pointer-events: none;
-}
-
-/* ══ PAGE ══ */
 .page {
   width: 210mm;
-  height: 297mm;
-  margin: 0 auto;
-  background: var(--white);
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 6px 48px rgba(0,0,0,0.20);
-  overflow: hidden;
+  margin: 28px auto;
+  background: #fff;
+  box-shadow: 0 12px 60px rgba(0,0,0,.18);
+  padding: 12px 34px 10px;
 }
 
-/* ══════════════════════════════
-   HEADER — white bg per Layout 02
-   ══════════════════════════════ */
+/* ── HEADER ── */
 .header {
-  background: var(--white);
-  padding: 20px 28px 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  flex-shrink: 0;
+  padding-bottom: 7px;
+  border-bottom: 2px solid var(--navy);
+  margin-bottom: 6px;
 }
-
-/* Garamond name — gravitas */
-.name-block h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 40px;
-  font-weight: 600;
+.header-left h1 {
+  font-family: 'Lora', serif;
+  font-size: 25px;
+  font-weight: 700;
   color: var(--navy);
-  letter-spacing: 0.02em;
+  letter-spacing: -0.3px;
   line-height: 1;
 }
-
-/* Blue title */
-.name-block .subtitle {
-  font-family: 'DM Sans', sans-serif;
+.header-left .role {
   font-size: 8.5px;
-  font-weight: 500;
-  color: var(--blue-md);
-  letter-spacing: 3px;
+  font-weight: 600;
+  color: var(--blue-lt);
   text-transform: uppercase;
+  letter-spacing: 2.8px;
   margin-top: 5px;
 }
-
-/* Contact right-aligned */
-.contact-block {
+.header-right {
   text-align: right;
   display: flex;
   flex-direction: column;
   gap: 2.5px;
-  padding-bottom: 4px;
 }
-
-.contact-block a,
-.contact-block span {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 8.2px;
+.header-right a,
+.header-right span {
+  font-size: 8.5px;
   color: var(--muted);
-  font-weight: 400;
   text-decoration: none;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
-.contact-block a:hover { color: var(--blue-md); text-decoration: underline; }
-
-/* 3px navy underline accent */
-.header-rule {
-  height: 3px;
-  background: var(--navy);
-  margin: 12px 0 0;
+/* ── SECTION HEADING ── */
+.sec-head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 4px;
 }
-
-/* ══════════════════════════════
-   METRICS BAND — 4 KPIs bordered
-   ══════════════════════════════ */
-.metrics {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+.sec-head::before {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 11px;
+  background: var(--blue-lt);
+  border-radius: 2px;
   flex-shrink: 0;
 }
-
-.metric {
-  padding: 9px 8px 8px;
-  text-align: center;
-  border-right: 1px solid var(--border);
-  background: var(--white);
-}
-.metric:last-child { border-right: none; }
-
-.metric .val {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
+.sec-head span {
+  font-size: 10px;
   font-weight: 700;
   color: var(--navy);
-  line-height: 1;
-  display: block;
-}
-
-.metric .lbl {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 6.8px;
-  font-weight: 500;
-  color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 0.9px;
-  margin-top: 3px;
-  display: block;
-  line-height: 1.35;
-}
-
-/* ══════════════════
-   BODY — 3/5 + 2/5 grid
-   ══════════════════ */
-.body {
-  display: flex;
+  letter-spacing: 1.8px;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid var(--border);
   flex: 1;
-  min-height: 0;
-  align-items: stretch;
 }
 
-/* ── MAIN (3/5) ── */
-.main {
-  flex: 3;
-  padding: 12px 15px 12px 24px;
-  border-right: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
+section { margin-bottom: 3px; }
+section:last-child { margin-bottom: 0; }
 
-/* ── SIDEBAR (2/5) ── */
-.sidebar {
-  flex: 2;
-  padding: 12px 20px 12px 14px;
-  background: var(--sidebar);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-/* ══ SECTION LABEL ══ */
-.sec-label {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 7px;
-  font-weight: 600;
-  color: var(--blue-md);
-  text-transform: uppercase;
-  letter-spacing: 2.2px;
-  padding-bottom: 4px;
-  border-bottom: 1.5px solid var(--blue-md);
-  margin-bottom: 6px;
-}
-
-/* ══ VP / SUMMARY ══ */
-.vp p {
-  font-family: 'DM Sans', sans-serif;
+/* ── SUMMARY ── */
+.summary p {
   font-size: 9px;
-  line-height: 1.62;
+  line-height: 1.42;
   color: var(--ink);
-  font-weight: 300;
 }
-.vp p strong { font-weight: 600; color: var(--navy); }
+.summary p strong { font-weight: 600; color: var(--navy); }
 
-/* ══ EXPERIENCE ══ */
-.job { margin-bottom: 8px; }
+/* ── EXPERIENCE ── */
+.job { margin-bottom: 4px; }
 .job:last-child { margin-bottom: 0; }
 
 .job-header {
@@ -228,576 +143,406 @@ body {
   align-items: baseline;
   margin-bottom: 1px;
 }
-
-.job-co {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
+.job-company {
+  font-family: 'Lora', serif;
+  font-size: 10.5px;
   font-weight: 700;
   color: var(--navy);
-  line-height: 1;
 }
-
 .job-dates {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 7.8px;
+  font-size: 8.5px;
   color: var(--muted);
   white-space: nowrap;
-  font-weight: 400;
 }
-
 .job-title {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 8px;
-  font-weight: 600;
-  color: var(--blue-md);
+  font-size: 8.5px;
+  font-weight: 700;
+  color: var(--blue-lt);
   text-transform: uppercase;
-  letter-spacing: 0.8px;
-  display: block;
+  letter-spacing: 0.7px;
   margin-bottom: 1px;
 }
-
 .job-promo {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 7.5px;
+  font-size: 8.5px;
   color: var(--muted);
   font-style: italic;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
-
 ul.bullets {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+  margin: 0;
+  padding: 0;
 }
-
 ul.bullets li {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 8.5px;
-  line-height: 1.50;
+  font-size: 9px;
+  line-height: 1.38;
   color: var(--ink);
-  font-weight: 300;
-  padding-left: 11px;
+  padding-left: 12px;
   position: relative;
+  margin-bottom: 1.5px;
 }
-
+ul.bullets li:last-child { margin-bottom: 0; }
 ul.bullets li::before {
-  content: "–";
+  content: '▸';
   position: absolute;
   left: 0;
-  color: var(--blue-md);
-  font-weight: 600;
+  color: var(--blue-lt);
+  font-size: 7.5px;
+  top: 1px;
 }
-
 ul.bullets li strong { font-weight: 600; color: var(--navy); }
 
-/* ══ CASE STUDY GRID (2×2) ══ */
+/* ── CLIENT ENGAGEMENTS ── */
 .case-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6px;
+  gap: 4px;
 }
-
 .case-card {
-  background: var(--pale);
   border: 1px solid var(--border);
-  border-top: 2.5px solid var(--blue-md);
-  padding: 6px 8px 7px;
+  border-top: 2.5px solid var(--blue-lt);
+  padding: 4px 7px 5px;
+  background: var(--pale);
 }
-
 .case-client {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 12px;
+  font-family: 'Lora', serif;
+  font-size: 10.5px;
   font-weight: 700;
   color: var(--navy);
   line-height: 1.2;
 }
-
 .case-tag {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 7px;
-  font-weight: 600;
-  color: var(--blue-md);
+  font-size: 8.5px;
+  font-weight: 700;
+  color: var(--blue-lt);
   text-transform: uppercase;
-  letter-spacing: 0.8px;
-  margin: 2px 0 3px;
+  letter-spacing: 0.7px;
   display: block;
+  margin: 2px 0 3px;
+}
+.case-body {
+  font-size: 8.8px;
+  line-height: 1.38;
+  color: var(--ink);
 }
 
-.case-row {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 7.8px;
-  line-height: 1.45;
-  color: var(--muted);
-  font-weight: 300;
-  margin-bottom: 1px;
+/* ── SKILLS — 2×2 grid ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 20px;
 }
-
-.case-row strong {
-  color: var(--navy);
-  font-weight: 600;
-}
-
-/* ══ SIDEBAR — COMPETENCY CHIPS ══ */
-.skill-group { margin-bottom: 5px; }
-.skill-group:last-child { margin-bottom: 0; }
-
-.skill-group-name {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 7px;
-  font-weight: 600;
-  color: var(--navy);
+.skill-row { }
+.skill-cat {
+  font-size: 8.5px;
+  font-weight: 700;
+  color: var(--blue-lt);
   text-transform: uppercase;
-  letter-spacing: 1.1px;
+  letter-spacing: 0.7px;
   margin-bottom: 3px;
 }
-
-.chips { display: flex; flex-wrap: wrap; gap: 3px; }
-
-.chip {
-  border: 1px solid var(--border);
-  padding: 2px 6px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 7.5px;
-  font-weight: 400;
-  color: var(--ink);
-  background: var(--white);
-  line-height: 1.4;
-}
-
-.chip.navy { background: var(--navy); color: var(--white); border-color: var(--navy); font-weight: 500; }
-.chip.pale  { background: var(--pale); border-color: var(--pale2); color: var(--navy); font-weight: 500; }
-
-/* ══ SIDEBAR — TOOLS ══ */
-.tools-wrap { display: flex; flex-wrap: wrap; gap: 3px 9px; }
-
-.tool-item {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 7.8px;
-  color: var(--muted);
-  border-left: 2px solid var(--border);
-  padding-left: 5px;
-  line-height: 1.6;
-}
-
-/* ══ SIDEBAR — CERTS ══ */
-.cert-row {
+.skill-tags {
   display: flex;
-  align-items: flex-start;
-  gap: 6px;
-  margin-bottom: 5px;
+  flex-wrap: wrap;
+  gap: 2px 3px;
 }
-.cert-row:last-child { margin-bottom: 0; }
-
-.cert-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  margin-top: 3px;
-  flex-shrink: 0;
+.stag {
+  font-size: 8.5px;
+  color: var(--sub);
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 1px 5px;
+  line-height: 1.3;
 }
-.cert-dot.done    { background: #16a34a; }
-.cert-dot.pending { background: #f59e0b; }
 
-.cert-name {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 8px;
+/* ── TOOLS ── */
+.tools-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 3px;
+}
+.ttag {
+  font-size: 8.5px;
+  color: var(--sub);
+  background: var(--pale);
+  border: 1px solid var(--border);
+  padding: 1.5px 6px;
+  line-height: 1.3;
   font-weight: 500;
+}
+
+/* ── CERTIFICATIONS ── */
+.cert-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 28px;
+}
+.cert-item { display: flex; flex-direction: column; gap: 1px; }
+.cert-name {
+  font-size: 9px;
+  font-weight: 600;
   color: var(--ink);
   line-height: 1.35;
 }
-
-.cert-name.done { color: var(--ink); }
-
 .cert-org {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 7.2px;
+  font-size: 8.5px;
   color: var(--muted);
-  font-weight: 300;
-  display: block;
 }
-
-.cert-badge {
+.badge {
   display: inline-block;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 6.5px;
-  font-weight: 600;
-  padding: 1px 5px;
-  margin-left: 4px;
+  font-size: 7px;
+  font-weight: 700;
+  padding: 1.5px 5px;
+  margin-left: 5px;
   vertical-align: middle;
   border-radius: 2px;
 }
+.done { background: #DCFCE7; color: #15803D; border: 1px solid #86EFAC; }
+.prog { background: #FEF9C3; color: #92400E; border: 1px solid #FDE68A; }
 
-.cert-badge.progress { background: #FEF9C3; color: #854D0E; }
-.cert-badge.done-badge { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-bd); }
-
-/* ══ SIDEBAR — EDUCATION ══ */
-.edu-row { margin-bottom: 4px; }
-.edu-row:last-child { margin-bottom: 0; }
-.edu-deg   { font-family: 'DM Sans', sans-serif; font-size: 8.5px; font-weight: 600; color: var(--navy); }
-.edu-school{ font-family: 'DM Sans', sans-serif; font-size: 7.8px; color: var(--muted); font-weight: 300; }
-
-/* ══ SIDEBAR — LANGUAGES ══ */
-.lang-row { display: flex; flex-wrap: wrap; gap: 4px; }
-.lang-chip {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 7.6px;
-  padding: 2px 7px;
-  border: 1px solid var(--border);
-  color: var(--ink);
-  background: var(--white);
+/* ── EDUCATION ── */
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 28px;
 }
-.lang-chip em { color: var(--muted); font-size: 7px; font-style: normal; margin-left: 3px; }
+.edu-item { display: flex; flex-direction: column; gap: 1px; }
+.edu-school {
+  font-family: 'Lora', serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+}
+.edu-detail {
+  font-size: 8.5px;
+  color: var(--muted);
+  line-height: 1.4;
+}
 
-/* ══ SIDEBAR — PORTFOLIO ══ */
-.port-row { margin-bottom: 4px; }
-.port-row:last-child { margin-bottom: 0; }
-.port-label { font-family: 'DM Sans', sans-serif; font-size: 8px; font-weight: 600; color: var(--navy); display: block; }
-.port-url { font-family: 'DM Sans', sans-serif; font-size: 7.5px; color: var(--blue-md); font-weight: 300; text-decoration: none; }
-.port-url:hover { text-decoration: underline; }
-
-/* ══ MOBILE ══ */
+/* ── MOBILE ── */
 @media screen and (max-width: 820px) {
   body { background: #fff; }
-  .page { width: 100%; min-height: 100vh; box-shadow: none; }
-  .header { flex-direction: column; align-items: flex-start; gap: 8px; padding: 18px 18px 0; }
-  .name-block h1 { font-size: 30px; }
-  .contact-block { text-align: left; }
-  .contact-block a, .contact-block span { font-size: 11px; }
-  .metrics { grid-template-columns: repeat(2, 1fr); }
-  .body { flex-direction: column; }
-  .main { flex: unset; padding: 16px 18px; border-right: none; border-bottom: 1px solid var(--border); gap: 14px; }
-  .sidebar { flex: unset; padding: 16px 18px; gap: 12px; }
-  .case-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .evp p, .vp p { font-size: 12px; }
-  ul.bullets li { font-size: 11px; }
-  .chip { font-size: 10px; padding: 3px 8px; }
-  .job-co { font-size: 17px; }
-}
-@media screen and (max-width: 480px) {
-  .case-grid { grid-template-columns: 1fr; }
-  .metrics { grid-template-columns: repeat(2, 1fr); }
+  .page { width: 100%; margin: 0; padding: 20px 18px; box-shadow: none; }
+  .header { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .header-right { text-align: left; }
+  .case-grid, .skills-grid { grid-template-columns: 1fr; }
+  .cert-grid, .edu-grid { grid-template-columns: 1fr; }
+  ul.bullets li, .summary p, .case-body { font-size: 14px; }
 }
 </style>
 </head>
 <body>
-
-<!-- ATS-readable plain text (hidden from visual view, readable by parsers) -->
-<div class="ats-text" aria-hidden="true">
-Tejal Mugul. Strategy and Market Intelligence Consultant.
-Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4e3a2b242f227f7e233b293b220e29232f2722602d2123">[email&#160;protected]</a>. Phone: +91 8698741555. Location: Pune, Maharashtra.
-LinkedIn: linkedin.com/in/tejal10mugul.
-Portfolio: tejal10mugul-gif.github.io/tejal-portfolio/ and tejal10mugul-gif.github.io/business-analyst-portfolio/
-Key metrics: 1087 Strategy and Research Engagements. 400000 USD revenue contributed. 425 Fortune 500 profiles. 20 RFPs led. 4 global regions covered: US EU APAC Japan.
-Work Experience:
-Associate Consultant L1. Research Nester Analytics. Remote. October 2023 to November 2025. Promoted from Senior Research Associate.
-Research Associate L1. Prudour Pvt Ltd. Pune. November 2022 to August 2023.
-Education:
-PGDM Marketing. Dr D Y Patil B-School Pune. 2020 to 2022.
-BMS IT E-Commerce. M D Palesha College of Commerce Dhule. 2017 to 2020.
-Certifications: Career Essentials in Generative AI Microsoft LinkedIn Learning 2026. Microsoft Power BI Data Analyst Associate PL-300 In Progress. IIBA ECBA Business Analysis. Scrum Fundamentals Certified SCRUMstudy.
-Skills: Market Sizing Competitive Intelligence Company Profiling Primary Secondary Research Market Segmentation Pricing Feasibility Demand Forecasting SWOT PESTLE Porter Five Forces Requirements Gathering BRD FRD Documentation User Stories Acceptance Criteria Stakeholder Communication Strategic Roadmapping Process Improvement Risk Compliance Analysis Agile Waterfall Power BI Dashboards Data Storytelling Data Modeling Advanced Excel SQL Standardised Reporting RFP Management Client Communication Presales Proposal Support Partner Evaluation Strategic Recommendations Executive Presentations.
-Tools: Power BI Advanced Excel JIRA Confluence PowerPoint Lucidchart Draw.io Factiva Statista GlobalData MarketLine IBISWorld EMIS ZoomInfo.
-Languages: English Professional Hindi Native Marathi Native.
-</div>
-
 <div class="page">
 
-  <!-- ══ HEADER ══ -->
+  <!-- HEADER -->
   <header class="header">
-    <div class="name-block">
+    <div class="header-left">
       <h1>Tejal Mugul</h1>
-      <!-- CHANGE 1: Updated headline -->
-      <div class="subtitle">Strategy &amp; Market Intelligence Consultant</div>
+      <div class="role">Strategy &amp; Market Intelligence Consultant</div>
     </div>
-    <div class="contact-block">
-      <a href="/cdn-cgi/l/email-protection#52263738333e63623f2735273e12353f333b3e7c313d3f"><span class="__cf_email__" data-cfemail="1064757a717c21207d6577657c50777d71797c3e737f7d">[email&#160;protected]</span></a>
+    <div class="header-right">
+      <a href="mailto:tejal10mugul@gmail.com">tejal10mugul@gmail.com</a>
       <a href="tel:+918698741555">+91 86987 41555</a>
       <span>Pune, Maharashtra</span>
-      <a href="https://linkedin.com/in/tejal10mugul" target="_blank" rel="noopener">linkedin.com/in/tejal10mugul</a>
+      <a href="https://linkedin.com/in/tejal10mugul" target="_blank">linkedin.com/in/tejal10mugul</a>
+      <a href="https://tejal10mugul-gif.github.io/tejal-portfolio/" target="_blank">tejal10mugul-gif.github.io/tejal-portfolio/</a>
     </div>
   </header>
-  <div class="header-rule"></div>
 
-  <!-- ══ METRICS BAND — CHANGE 4: Updated KPI wording ══ -->
-  <div class="metrics">
-    <div class="metric">
-      <span class="val">1,087</span>
-      <!-- CHANGE 4: Updated label -->
-      <span class="lbl">Strategy &amp; Research Engagements</span>
+  <!-- SUMMARY -->
+  <section class="summary">
+    <div class="sec-head"><span>Professional Summary</span></div>
+    <p>A results-driven <strong>Strategy and Market Intelligence Consultant</strong> who transforms complex market data into clear, executive-grade decisions. Specializes in <strong>competitive intelligence, go-to-market strategy, and B2B research</strong> across ICT, Chemicals, Automotive, and Industrial sectors, working with Fortune 500 organizations spanning US, EU, APAC, and Japan. Equally comfortable leading high-stakes RFPs, sizing market opportunities through <strong>TAM/SAM/SOM analysis</strong>, or building Power BI dashboards that bring insights to life. Known for turning ambiguous briefs into strategic clarity, fast.</p>
+  </section>
+
+  <!-- WORK EXPERIENCE -->
+  <section>
+    <div class="sec-head"><span>Work Experience</span></div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">Research Nester Analytics, Remote</span>
+        <span class="job-dates">Oct 2023 – Nov 2025</span>
+      </div>
+      <div class="job-title">Associate Consultant, L1</div>
+      <div class="job-promo">Promoted from Senior Research Associate; expanded into consulting and RFP leadership</div>
+      <ul class="bullets">
+        <li>Orchestrated end-to-end delivery of high-volume research outputs, including customised proposals, reports, analytical models, benchmarks, Power BI dashboards, and standardised templates, sustaining consistent on-time quality across concurrent mandates and contributing to <strong>~$400K</strong> in cumulative project value</li>
+        <li>Crafted bespoke client proposals and intelligence samples daily, winning high-value mandates each month and fueling sustained revenue growth for the practice</li>
+        <li>Authored <strong>425+ in-depth intelligence profiles</strong> on Fortune 500 firms, including 3M, ABB, Honda, IBM, Siemens, and BASF, equipping global clients with strategic intelligence for decision-making and market positioning</li>
+        <li>Directed <strong>20+ RFP responses</strong> for IKEA, ARNO, United Compounding Industrial Company, and Adani Wilmar, addressing market entry strategy, partner evaluation, and competitive benchmarking use cases</li>
+        <li>Produced <strong>competitive intelligence and market assessment reports</strong> covering competitor strategies, regulatory developments, pricing structures, product launches, M&amp;A activity, partnerships, supply chain dynamics, and go-to-market frameworks</li>
+        <li>Performed <strong>regional and country-level market analysis</strong> spanning North America, Europe, Asia-Pacific, and emerging markets across ICT, Chemicals, Semiconductors, and Electronics; executed TAM/SAM/SOM sizing, growth forecasting, and demand analysis to inform client investment and expansion decisions</li>
+        <li>Steered requirement scoping, progress reviews, and insight validation while upholding rigorous QA standards, building high satisfaction scores and driving repeat engagements</li>
+      </ul>
     </div>
-    <div class="metric">
-      <span class="val">~$400K</span>
-      <span class="lbl">Revenue Contributed</span>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">Prudour Pvt. Ltd., Pune</span>
+        <span class="job-dates">Nov 2022 – Aug 2023</span>
+      </div>
+      <div class="job-title">Research Associate, L1</div>
+      <ul class="bullets">
+        <li>Mapped segmentation landscapes and profiled companies spanning ICT, Consumer Goods, Industrial Manufacturing, Equipment, and Food and Beverage, building the intelligence foundation for B2B pitches and customised deliverables</li>
+        <li>Applied <strong>SWOT, PESTLE, and Porter's Five Forces</strong> alongside qualitative and quantitative research to evaluate market risks, regulatory impact, and competitive dynamics</li>
+        <li>Structured comprehensive research reports by organizing insights, building logical TOCs, and ensuring clarity for final delivery; identified growth opportunities and <strong>competitive whitespace</strong> across Equipment, FMCG, and Industrial verticals</li>
+      </ul>
     </div>
-    <div class="metric">
-      <span class="val">425+</span>
-      <span class="lbl">F500 Co. Profiles</span>
+  </section>
+
+  <!-- CLIENT ENGAGEMENTS -->
+  <section>
+    <div class="sec-head"><span>Selected Client Engagements</span></div>
+    <div class="case-grid">
+      <div class="case-card">
+        <div class="case-client">IKEA</div>
+        <span class="case-tag">Market Entry, India</span>
+        <div class="case-body">Built a ground-up demand and pricing analysis across 6 metros, mapping willingness-to-pay, rental models, and regulatory factors. Delivered the evidence base for a confident Go/No-Go market entry decision.</div>
+      </div>
+      <div class="case-card">
+        <div class="case-client">Adani Wilmar</div>
+        <span class="case-tag">Growth Strategy, FMCG</span>
+        <div class="case-body">Traced the end-to-end supply chain and ran a regulatory scan across priority markets, surfacing distribution bottlenecks and untapped geographies. Output became the backbone of the client's regional expansion roadmap.</div>
+      </div>
+      <div class="case-card">
+        <div class="case-client">Honda, Bridgestone, Mahindra, Kubota</div>
+        <span class="case-tag">Brand and Pricing Intelligence, Automotive and Industrial</span>
+        <div class="case-body">Executed a multi-brand assessment covering SKU-level pricing, brand health scoring, and positioning gaps. Enabled four clients to recalibrate their product portfolios and go-to-market strategies with precision.</div>
+      </div>
+      <div class="case-card">
+        <div class="case-client">Suzuki / Maruti, Global OEMs</div>
+        <span class="case-tag">Consumer Insights, Go-to-Market</span>
+        <div class="case-body">Designed and fielded primary and secondary research across multiple regions, distilling findings into segmented behavioral profiles. Informed product development priorities and sharpened regional launch strategies for the OEM client base.</div>
+      </div>
     </div>
-    <div class="metric">
-      <span class="val">20+ RFPs</span>
-      <span class="lbl">Led &amp; Won</span>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <div class="sec-head"><span>Core Competencies &amp; Skills</span></div>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <div class="skill-cat">Market Research &amp; Intelligence</div>
+        <div class="skill-tags">
+          <span class="stag">Market Sizing</span>
+          <span class="stag">TAM / SAM / SOM</span>
+          <span class="stag">Competitive Intelligence</span>
+          <span class="stag">Company Profiling</span>
+          <span class="stag">Primary &amp; Secondary Research</span>
+          <span class="stag">Qualitative &amp; Quantitative Research</span>
+          <span class="stag">Industry Analysis</span>
+          <span class="stag">Market Segmentation</span>
+          <span class="stag">Demand Forecasting</span>
+          <span class="stag">Go-to-Market Strategy</span>
+          <span class="stag">Competitive Landscape Analysis</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">Business Analysis &amp; Strategy</div>
+        <div class="skill-tags">
+          <span class="stag">Requirements Gathering</span>
+          <span class="stag">BRD &amp; FRD Documentation</span>
+          <span class="stag">User Stories</span>
+          <span class="stag">Stakeholder Management</span>
+          <span class="stag">Strategic Roadmapping</span>
+          <span class="stag">Process Improvement</span>
+          <span class="stag">Risk &amp; Compliance Analysis</span>
+          <span class="stag">Agile &amp; Waterfall</span>
+          <span class="stag">Gap Analysis</span>
+          <span class="stag">B2B Consulting</span>
+          <span class="stag">Cross-functional Collaboration</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">Data &amp; Analytics</div>
+        <div class="skill-tags">
+          <span class="stag">Power BI</span>
+          <span class="stag">KPI Reporting</span>
+          <span class="stag">Data Storytelling</span>
+          <span class="stag">Data Modeling</span>
+          <span class="stag">Advanced Excel</span>
+          <span class="stag">Pivot Tables &amp; VLOOKUP</span>
+          <span class="stag">SQL</span>
+          <span class="stag">AI-assisted Research Tools</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">Consulting &amp; Client Management</div>
+        <div class="skill-tags">
+          <span class="stag">RFP Management</span>
+          <span class="stag">Presales &amp; Proposal Support</span>
+          <span class="stag">Partner Evaluation</span>
+          <span class="stag">Client Communication</span>
+          <span class="stag">Executive Presentations</span>
+          <span class="stag">SWOT</span>
+          <span class="stag">PESTLE</span>
+          <span class="stag">Porter's Five Forces</span>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ══ BODY ══ -->
-  <div class="body">
+  <!-- TOOLS -->
+  <section>
+    <div class="sec-head"><span>Tools &amp; Platforms</span></div>
+    <div class="tools-wrap">
+      <span class="ttag">Power BI</span>
+      <span class="ttag">Advanced Excel</span>
+      <span class="ttag">JIRA</span>
+      <span class="ttag">Confluence</span>
+      <span class="ttag">PowerPoint</span>
+      <span class="ttag">Lucidchart</span>
+      <span class="ttag">Draw.io</span>
+      <span class="ttag">Factiva</span>
+      <span class="ttag">Statista</span>
+      <span class="ttag">GlobalData</span>
+      <span class="ttag">MarketLine</span>
+      <span class="ttag">IBISWorld</span>
+      <span class="ttag">EMIS</span>
+      <span class="ttag">ZoomInfo</span>
+    </div>
+  </section>
 
-    <!-- ════ MAIN — 3/5 ════ -->
-    <main class="main">
+  <!-- CERTIFICATIONS -->
+  <section>
+    <div class="sec-head"><span>Certifications &amp; Training</span></div>
+    <div class="cert-grid">
+      <div class="cert-item">
+        <div class="cert-name">Career Essentials in Generative AI <span class="badge done">Completed</span></div>
+        <div class="cert-org">Microsoft and LinkedIn Learning, 2026</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-name">IIBA ECBA Business Analysis <span class="badge done">Completed</span></div>
+        <div class="cert-org">International Institute of Business Analysis</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-name">Scrum Fundamentals Certified (SFC) <span class="badge done">Completed</span></div>
+        <div class="cert-org">SCRUMstudy</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-name">Power BI Data Analyst Associate PL-300 <span class="badge prog">In Progress</span></div>
+        <div class="cert-org">Microsoft</div>
+      </div>
+    </div>
+  </section>
 
-      <!-- VP Paragraph -->
-      <section>
-        <div class="sec-label">Executive Value Proposition</div>
-        <div class="vp">
-          <p><strong>Strategy &amp; Market Intelligence Consultant</strong> with ~3 years of experience delivering market intelligence and competitive strategy for <strong>Fortune 500 organisations</strong> across <strong>ICT, Chemicals, Automotive, and Industrial</strong> sectors. Experienced in RFP leadership, stakeholder engagement, and translating ambiguous briefs into <strong>executive-grade strategic recommendations</strong>. Contributed <strong>~₹3.3 Cr (~$400K USD)</strong> in consulting project value across <strong>US, EU, APAC, and Japan</strong>.</p>
-        </div>
-      </section>
+  <!-- EDUCATION -->
+  <section>
+    <div class="sec-head"><span>Education</span></div>
+    <div class="edu-grid">
+      <div class="edu-item">
+        <div class="edu-school">Dr. D.Y. Patil B-School, Pune</div>
+        <div class="edu-detail">PGDM in Marketing, 2020 – 2022</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-school">M.D. Palesha College of Commerce, Dhule</div>
+        <div class="edu-detail">BMS (IT), 2017 – 2020</div>
+      </div>
+    </div>
+  </section>
 
-      <!-- Experience -->
-      <section>
-        <div class="sec-label">Work Experience</div>
-
-        <div class="job">
-          <div class="job-header">
-            <span class="job-co">Research Nester Analytics &nbsp;·&nbsp; Remote</span>
-            <span class="job-dates">Oct 2023 – Nov 2025</span>
-          </div>
-          <span class="job-title">Associate Consultant – L1</span>
-          <div class="job-promo">Promoted from Senior Research Associate · expanded into client-facing consulting &amp; RFP leadership</div>
-          <ul class="bullets">
-            <!-- CHANGE 2a: Strengthened — revenue contribution + scale -->
-            <li>Delivered <strong>1,087 multi-industry strategy &amp; research engagements</strong> for global enterprise clients across <strong>US, EU, APAC, and Japan</strong> — generating <strong>~₹3.3 Cr (~$400K USD)</strong> in consulting value</li>
-            <!-- CHANGE 2b: Strengthened — Fortune 500 + global exposure -->
-            <li>Produced <strong>425+ intelligence profiles</strong> on Fortune 500 clients across <strong>US, EU, APAC, and Japan</strong> — including 3M, ABB, Honda, IBM, Siemens, and BASF — informing C-suite strategy across ICT, Chemicals, and Industrial verticals</li>
-            <!-- CHANGE 2c: Strengthened — RFP influence + named clients -->
-            <li>Architected <strong>20+ RFP responses for global enterprise clients</strong> including IKEA, Adani Wilmar, and ARNO — covering market entry, partner evaluation, and competitive benchmarking; win rate directly supported practice revenue growth</li>
-            <li>Conducted <strong>market sizing, growth driver analysis, and opportunity assessments</strong> across US, EU, APAC, and Japan — ICT, Chemicals, Semiconductors, and Electronics</li>
-            <li>Delivered strategic insights on <strong>pricing models, M&amp;A activity, supply chain dynamics, regulatory landscapes, and product launches</strong></li>
-            <li>Built executive <strong>Power BI dashboards</strong> and standardised reporting templates; led client calls for requirement clarification and insight validation</li>
-            <li>Maintained rigorous <strong>quality assurance</strong> across team deliverables — reviewed and validated junior researchers' outputs to ensure accuracy, consistency, and client-ready standards before submission; presented customised market intelligence reports directly to senior leadership</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="job-header">
-            <span class="job-co">Prudour Pvt. Ltd. &nbsp;·&nbsp; Pune</span>
-            <span class="job-dates">Nov 2022 – Aug 2023</span>
-          </div>
-          <span class="job-title">Research Associate – L1</span>
-          <div style="margin-top:3px;">
-            <ul class="bullets">
-              <li>Conducted <strong>market segmentation and company profiling</strong> across ICT, Consumer Goods, Industrial Manufacturing, and Food &amp; Beverage to support client pitches and high-value research samples</li>
-              <li>Applied <strong>SWOT, PESTLE, and Porter's Five Forces</strong> to evaluate market risks, regulatory impact, and competitive dynamics</li>
-              <li>Structured comprehensive research reports — building TOCs, organising insights, and ensuring coherence for client-ready delivery</li>
-              <li>Identified growth opportunities and <strong>competitive whitespace</strong> across Equipment, FMCG, and Industrial verticals</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Case Study Grid — 2×2 panels -->
-      <section>
-        <div class="sec-label">Selected Client Engagements</div>
-        <div class="case-grid">
-
-          <div class="case-card">
-            <div class="case-client">IKEA</div>
-            <span class="case-tag">Market Entry · India</span>
-            <div class="case-row"><strong>Problem:</strong> No validated data on India's rental furniture market</div>
-            <div class="case-row"><strong>Approach:</strong> Demand analysis + pricing benchmark across 6 metros</div>
-            <div class="case-row"><strong>Impact:</strong> Enabled Go/No-Go decision for leadership; directly supported market entry strategy</div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-client">Adani Wilmar</div>
-            <span class="case-tag">Growth Strategy · FMCG</span>
-            <div class="case-row"><strong>Problem:</strong> Distribution gaps and unclear growth adjacencies</div>
-            <div class="case-row"><strong>Approach:</strong> Supply chain mapping + regulatory scan across target markets</div>
-            <div class="case-row"><strong>Impact:</strong> Surfaced actionable growth levers; informed regional expansion roadmap</div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-client">Honda · Bridgestone · Mahindra · Kubota</div>
-            <span class="case-tag">Brand &amp; Pricing Intelligence</span>
-            <div class="case-row"><strong>Problem:</strong> Pricing opacity and brand health gaps across automotive &amp; industrial</div>
-            <div class="case-row"><strong>Approach:</strong> Multi-brand health assessment and SKU-level pricing intelligence</div>
-            <div class="case-row"><strong>Impact:</strong> Delivered competitive positioning insights to inform product &amp; pricing strategy</div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-client">Suzuki / Maruti · Global OEMs</div>
-            <span class="case-tag">Automotive Consumer Insights</span>
-            <div class="case-row"><strong>Problem:</strong> Limited consumer behavioural intelligence for product positioning</div>
-            <div class="case-row"><strong>Approach:</strong> Primary &amp; secondary consumer research across global OEM client base</div>
-            <div class="case-row"><strong>Impact:</strong> Informed product strategy and regional go-to-market planning for OEM clients</div>
-          </div>
-
-        </div>
-      </section>
-
-    </main>
-
-    <!-- ════ SIDEBAR — 2/5 — CHANGE 3: Reordered sections ════ -->
-    <aside class="sidebar">
-
-      <!-- 1. Core Competencies (was already first — kept) -->
-      <section>
-        <div class="sec-label">Core Competencies</div>
-
-        <div class="skill-group">
-          <div class="skill-group-name">Market Research &amp; Intelligence</div>
-          <div class="chips">
-            <span class="chip navy">Market Sizing</span>
-            <span class="chip navy">Competitive Intelligence</span>
-            <span class="chip pale">Company Profiling</span>
-            <span class="chip">Primary &amp; Secondary Research</span>
-            <span class="chip">Industry &amp; Regional Analysis</span>
-            <span class="chip">Market Segmentation</span>
-            <span class="chip">Pricing &amp; Feasibility</span>
-            <span class="chip">Demand Forecasting</span>
-          </div>
-        </div>
-
-        <div class="skill-group" style="margin-top:5px;">
-          <div class="skill-group-name">Business Analysis &amp; Strategy</div>
-          <div class="chips">
-            <span class="chip navy">Requirements Gathering</span>
-            <span class="chip pale">BRD &amp; FRD Documentation</span>
-            <span class="chip">User Stories &amp; Acceptance Criteria</span>
-            <span class="chip">Stakeholder Communication</span>
-            <span class="chip">Strategic Roadmapping</span>
-            <span class="chip">Process Improvement</span>
-            <span class="chip">Risk &amp; Compliance Analysis</span>
-            <span class="chip">Agile &amp; Waterfall</span>
-            <span class="chip">Gap Analysis</span>
-          </div>
-        </div>
-
-        <div class="skill-group" style="margin-top:5px;">
-          <div class="skill-group-name">Data, Analytics &amp; Visualisation</div>
-          <div class="chips">
-            <span class="chip navy">Power BI Dashboards</span>
-            <span class="chip pale">Data Storytelling</span>
-            <span class="chip">Data Interpretation &amp; Integrity</span>
-            <span class="chip">Data Modeling</span>
-            <span class="chip">Adv. Excel (Pivot, VLOOKUP)</span>
-            <span class="chip">Basic SQL</span>
-            <span class="chip">AI-assisted Research Tools</span>
-          </div>
-        </div>
-
-        <div class="skill-group" style="margin-top:5px;">
-          <div class="skill-group-name">Consulting &amp; Client Management</div>
-          <div class="chips">
-            <span class="chip pale">RFP Management</span>
-            <span class="chip">Client Communication</span>
-            <span class="chip">Presales &amp; Proposal Support</span>
-            <span class="chip">Partner Evaluation</span>
-            <span class="chip">Strategic Recommendations</span>
-            <span class="chip">Executive Presentations</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- 2. Tools (moved up — was after Certs) -->
-      <section>
-        <div class="sec-label">Tools &amp; Platforms</div>
-        <div class="tools-wrap">
-          <span class="tool-item">Power BI</span>
-          <span class="tool-item">Advanced Excel</span>
-          <span class="tool-item">JIRA</span>
-          <span class="tool-item">Confluence</span>
-          <span class="tool-item">PowerPoint</span>
-          <span class="tool-item">Lucidchart</span>
-          <span class="tool-item">Draw.io</span>
-          <span class="tool-item">Factiva</span>
-          <span class="tool-item">Statista</span>
-          <span class="tool-item">GlobalData</span>
-          <span class="tool-item">MarketLine</span>
-          <span class="tool-item">IBISWorld</span>
-          <span class="tool-item">EMIS</span>
-          <span class="tool-item">ZoomInfo</span>
-        </div>
-      </section>
-
-      <!-- 3. Certifications (moved up — was after Tools) -->
-      <section>
-        <div class="sec-label">Certifications &amp; Training</div>
-
-        <div class="cert-row">
-          <div class="cert-dot done"></div>
-          <div>
-            <div class="cert-name done">Career Essentials in Generative AI <span class="cert-badge done-badge">Completed</span></div>
-            <span class="cert-org">Microsoft &amp; LinkedIn Learning · 2026</span>
-          </div>
-        </div>
-
-        <div class="cert-row">
-          <div class="cert-dot pending"></div>
-          <div>
-            <div class="cert-name">Microsoft Power BI Data Analyst Associate (PL-300) <span class="cert-badge progress">In Progress</span></div>
-          </div>
-        </div>
-
-        <div class="cert-row">
-          <div class="cert-dot done"></div>
-          <div>
-            <div class="cert-name done">IIBA ECBA — Business Analysis <span class="cert-badge done-badge">Completed</span></div>
-            <span class="cert-org">International Institute of Business Analysis</span>
-          </div>
-        </div>
-
-        <div class="cert-row">
-          <div class="cert-dot done"></div>
-          <div>
-            <div class="cert-name done">Scrum Fundamentals Certified (SFC) <span class="cert-badge done-badge">Completed</span></div>
-            <span class="cert-org">SCRUMstudy</span>
-          </div>
-        </div>
-
-      </section>
-
-      <!-- 4. Education (moved — was before Languages) -->
-      <section>
-        <div class="sec-label">Education</div>
-        <div class="edu-row">
-          <div class="edu-deg">PGDM — Marketing</div>
-          <div class="edu-school">Dr. D.Y. Patil B-School, Pune &nbsp;·&nbsp; 2020–2022</div>
-        </div>
-        <div class="edu-row">
-          <div class="edu-deg">BMS — IT (E-Commerce)</div>
-          <div class="edu-school">M.D. Palesha College of Commerce, Dhule &nbsp;·&nbsp; 2017–2020</div>
-        </div>
-      </section>
-
-      <!-- Languages (kept in place) -->
-      <section>
-        <div class="sec-label">Languages</div>
-        <div class="lang-row">
-          <span class="lang-chip">English <em>Professional</em></span>
-          <span class="lang-chip">Hindi <em>Native</em></span>
-          <span class="lang-chip">Marathi <em>Native</em></span>
-        </div>
-      </section>
-
-      <!-- 5. Portfolio (moved to end) -->
-      <section>
-        <div class="sec-label">Portfolio</div>
-        <p style="font-family:'DM Sans',sans-serif;font-size:7.8px;color:var(--muted);font-weight:300;font-style:italic;margin-bottom:5px;line-height:1.45;">Work samples spanning market research, strategy, and business analysis.</p>
-        <div class="port-row">
-          <span class="port-label">Market Research &amp; Analytics</span>
-          <a class="port-url" href="https://tejal10mugul-gif.github.io/tejal-portfolio/" target="_blank" rel="noopener">tejal10mugul-gif.github.io/tejal-portfolio/</a>
-        </div>
-        <div class="port-row">
-          <span class="port-label">Business Analysis</span>
-          <a class="port-url" href="https://tejal10mugul-gif.github.io/business-analyst-portfolio/" target="_blank" rel="noopener">tejal10mugul-gif.github.io/business-analyst-portfolio/</a>
-        </div>
-
-      </section>
-
-    </aside>
-  </div><!-- /body -->
-
-</div><!-- /page -->
+</div>
 </body>
 </html>
