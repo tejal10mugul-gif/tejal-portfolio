@@ -1,3 +1,3 @@
-# Case Studies
+# Proof of Work
 
-This folder contains consulting case studies, presentations, and reports included in my professional portfolio.
+This section contains consulting case studies, dashboards, presentations, and reports included in my professional portfolio.
