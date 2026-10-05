@@ -1,0 +1,27 @@
+name: Restore original hero
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    if: "!contains(github.event.head_commit.message, 'Restore original hero')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Restore original index and keep user changes
+        run: |
+          git diff 7a7b5264b39555259b3a1ce3c42b28afef063a64 8e946be682962a4558fd0b67c635a4f2da42d1b0 -- index.html > /tmp/user.patch || true
+          git checkout 7a7b5264b39555259b3a1ce3c42b28afef063a64 -- index.html
+          if [ -s /tmp/user.patch ]; then git apply /tmp/user.patch; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Restore original hero"
+          git push
