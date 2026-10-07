@@ -32,7 +32,7 @@ So I decided to build an automation around the problem instead of continuing to 
 
 ## 🎯 Project Objective
 
-The goal of this project is to automatically discover and prioritize relevant **LinkedIn feed posts** for entry-level Data/Analytics opportunities.
+The goal of this project is to automatically discover and prioritize relevant **LinkedIn feed posts** for Business Consulting, Market Intelligence, Business Analysis and Data/Analytics opportunities.
 
 The system focuses on:
 
@@ -692,7 +692,7 @@ Users should review the terms and policies of the platforms and services they us
 
 ## 👨‍💻 About
 
-**Dhiraj Mahato**
+**Tejal Mugul**
 
 Data Analyst | Power BI | SQL | Python | Microsoft Fabric | AI Automation
 
