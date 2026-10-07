@@ -13,7 +13,7 @@ iframe{display:block;width:100%;height:78vh;border:0}
 @media(max-width:700px){.title{font-size:25px}.frame,iframe{min-height:70vh;height:70vh}}
 </style></head>
 <body><header><h1>Tejal Mugul · Project Viewer</h1><a class="back" href="proof-of-work.html">← Back to Proof of Work</a></header>
-<main><div class="meta"><div class="eyebrow" id="eyebrow">Portfolio Project</div><div class="title" id="title">Loading project…</div><div class="note" id="note">The project is displayed in the portfolio viewer. No project-file download is offered from this page.</div></div>
+<main><div class="meta"><div class="eyebrow" id="eyebrow">Portfolio Project</div><div class="title" id="title">Loading project…</div><div class="note" id="note">Portfolio project file and preview information.</div></div>
 <div class="frame" id="frame"></div></main>
 <script>
 const p=new URLSearchParams(location.search), file=p.get('file'), type=p.get('type')||'document', title=p.get('title')||'Project Preview';
@@ -25,7 +25,7 @@ if(type==='powerbi'){
    frame.innerHTML='<iframe title="Interactive Power BI dashboard" src="'+decodeURIComponent(embed)+'" allowfullscreen></iframe>';
  }else if(file){
    const src=location.origin+location.pathname.replace(/viewer\\.html$/,'')+file.replace(/^\\//,'');
-   frame.innerHTML='<div class="message"><h2>Power BI Dashboard</h2><p>This portfolio contains the original Power BI report file. GitHub Pages cannot render a .pbix file directly in a browser. Use the button below to open the report file in Power BI Desktop.</p><a class="back" style="display:inline-block;background:var(--navy);color:#fff;text-decoration:none;margin-top:14px" href="'+src+'" target="_blank" rel="noopener">Open Power BI File →</a></div>';
+   frame.innerHTML='<div class="message"><h2>Power BI Dashboard</h2><p>This portfolio contains the original Power BI report file. GitHub Pages cannot render a .pbix file directly in a browser. The original Power BI report is available from the Proof of Work page.</p></div>';
  }else {
    frame.innerHTML='<div class="message"><h2>Interactive Power BI Dashboard</h2><p>The interactive web version will appear here once a Power BI web embed URL is connected.</p></div>';
  }
