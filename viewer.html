@@ -13,13 +13,18 @@ iframe{display:block;width:100%;height:78vh;border:0}
 @media(max-width:700px){.title{font-size:25px}.frame,iframe{min-height:70vh;height:70vh}}
 </style></head>
 <body><header><h1>Tejal Mugul · Project Viewer</h1><a class="back" href="proof-of-work.html">← Back to Proof of Work</a></header>
-<main><div class="meta"><div class="eyebrow" id="eyebrow">Portfolio Project</div><div class="title" id="title">Loading project…</div><div class="note" id="note">Portfolio project file and preview information.</div></div>
+<main><div class="meta"><div class="eyebrow" id="eyebrow">Portfolio Project</div><div class="title" id="title">Loading project…</div><div class="note" id="note">Download the original project file directly from this portfolio.</div></div>
 <div class="frame" id="frame"></div></main>
 <script>
 const p=new URLSearchParams(location.search), file=p.get('file'), type=p.get('type')||'document', title=p.get('title')||'Project Preview';
 document.getElementById('title').textContent=title;
 const frame=document.getElementById('frame');
-if(type==='powerbi'){
+if(file){
+ const src=location.origin+location.pathname.replace(/viewer\\.html$/,'')+file.replace(/^\\//,'');
+ const ext=file.toLowerCase().split('.').pop();
+ const label=ext==='pbix'?'Power BI Dashboard (.pbix)':'Excel Dashboard (.xlsx)';
+ frame.innerHTML='<div class="message"><h2>Original Project File</h2><p>'+label+' — download the original file directly.</p><a class="back" style="display:inline-block;background:var(--navy);color:#fff;text-decoration:none;margin-top:14px" href="'+src+'" download>Download '+label+' ↓</a></div>';
+}else if(type==='powerbi'){
  const embed=p.get('embed');
  if(embed){
    frame.innerHTML='<iframe title="Interactive Power BI dashboard" src="'+decodeURIComponent(embed)+'" allowfullscreen></iframe>';
@@ -29,10 +34,6 @@ if(type==='powerbi'){
  }else {
    frame.innerHTML='<div class="message"><h2>Interactive Power BI Dashboard</h2><p>The interactive web version will appear here once a Power BI web embed URL is connected.</p></div>';
  }
-}else if(file){
- const src=location.origin+location.pathname.replace(/viewer\.html$/,'')+file.replace(/^\//,'');
- const office='https://view.officeapps.live.com/op/embed.aspx?src='+encodeURIComponent(src);
- frame.innerHTML='<iframe title="Project viewer" src="'+office+'" allowfullscreen></iframe>';
 }else{
  frame.innerHTML='<div class="message"><h2>Project unavailable</h2><p>No viewer source was supplied.</p></div>';
 }
