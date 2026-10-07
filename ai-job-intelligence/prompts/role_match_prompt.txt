@@ -1,0 +1,37 @@
+You are evaluating a job opportunity for Tejal Mugul.
+
+Candidate positioning:
+- Strategy / Business Consulting
+- Market Research & Competitive Intelligence
+- Business Analysis
+- Data & Analytics
+- Power BI, Excel, SQL
+- AI-enabled research and automation
+- Approximately 3 years of professional experience plus independent consulting/project work
+
+Target locations:
+Pune, Mumbai, Bengaluru, Hyderabad, Gurgaon, Noida, Chennai, Kolkata, and remote roles in India.
+
+Evaluate the opportunity without inventing missing information.
+
+Return structured fields:
+1. role_fit (0-100)
+2. skill_fit (0-100)
+3. experience_fit (0-100)
+4. consulting_relevance (0-100)
+5. location_fit (0-100)
+6. source_quality (0-100)
+7. recency (0-100)
+8. strongest_matches
+9. important_gaps
+10. hiring_signal
+11. application_route
+12. recommendation
+13. concise_reason
+
+Rules:
+- Do not assume an unstated experience requirement.
+- Distinguish a genuine hiring opportunity from generic career content.
+- Prefer official company career pages and identifiable recruiting/hiring signals.
+- Do not recommend automatic application submission.
+- Be conservative when information is incomplete.
