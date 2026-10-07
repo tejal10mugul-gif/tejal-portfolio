@@ -20,7 +20,9 @@ const p=new URLSearchParams(location.search), file=p.get('file'), type=p.get('ty
 document.getElementById('title').textContent=title;
 const frame=document.getElementById('frame');
 if(type==='powerbi'){
- frame.innerHTML='<div class="message"><h2>Interactive Power BI Dashboard</h2><p>This space is reserved for the published Power BI report. Once the report is published, its secure embed URL can be placed here so visitors interact with the dashboard directly on this page instead of receiving the PBIX file.</p></div>';
+ const embed=p.get('embed');
+ if(embed){ frame.innerHTML='<iframe title="Interactive Power BI dashboard" src="'+decodeURIComponent(embed)+'" allowfullscreen></iframe>'; }
+ else { frame.innerHTML='<div class="message"><h2>Interactive Power BI Dashboard</h2><p>This page is ready for the published Power BI embed URL. Once added, visitors will interact with the report directly here instead of receiving the PBIX file.</p></div>'; }
 }else if(file){
  const src=location.origin+location.pathname.replace(/viewer\.html$/,'')+file.replace(/^\//,'');
  const office='https://view.officeapps.live.com/op/embed.aspx?src='+encodeURIComponent(src);
