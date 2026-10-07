@@ -21,8 +21,14 @@ document.getElementById('title').textContent=title;
 const frame=document.getElementById('frame');
 if(type==='powerbi'){
  const embed=p.get('embed');
- if(embed){ frame.innerHTML='<iframe title="Interactive Power BI dashboard" src="'+decodeURIComponent(embed)+'" allowfullscreen></iframe>'; }
- else { frame.innerHTML='<div class="message"><h2>Interactive Power BI Dashboard</h2><p>This page is ready for the published Power BI embed URL. Once added, visitors will interact with the report directly here instead of receiving the PBIX file.</p></div>'; }
+ if(embed){
+   frame.innerHTML='<iframe title="Interactive Power BI dashboard" src="'+decodeURIComponent(embed)+'" allowfullscreen></iframe>';
+ }else if(file){
+   const src=location.origin+location.pathname.replace(/viewer\\.html$/,'')+file.replace(/^\\//,'');
+   frame.innerHTML='<div class="message"><h2>Power BI Dashboard</h2><p>This portfolio contains the original Power BI report file. GitHub Pages cannot render a .pbix file directly in a browser. Use the button below to open the report file in Power BI Desktop.</p><a class="back" style="display:inline-block;background:var(--navy);color:#fff;text-decoration:none;margin-top:14px" href="'+src+'" target="_blank" rel="noopener">Open Power BI File →</a></div>';
+ }else {
+   frame.innerHTML='<div class="message"><h2>Interactive Power BI Dashboard</h2><p>The interactive web version will appear here once a Power BI web embed URL is connected.</p></div>';
+ }
 }else if(file){
  const src=location.origin+location.pathname.replace(/viewer\.html$/,'')+file.replace(/^\//,'');
  const office='https://view.officeapps.live.com/op/embed.aspx?src='+encodeURIComponent(src);
