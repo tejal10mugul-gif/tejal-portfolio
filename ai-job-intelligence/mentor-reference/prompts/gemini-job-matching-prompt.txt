@@ -29,7 +29,7 @@ CANDIDATE PROFILE
 
 Target candidate:
 
-Name: Dhiraj Mahato
+Name: Tejal Mugul
 
 Primary target:
 Data Analyst / entry-level Data & BI roles
@@ -987,7 +987,7 @@ Does this appear to be a genuine hiring opportunity?
 
 ELIGIBILITY
 =
-Is this opportunity suitable for Dhiraj?
+Is this opportunity suitable for Tejal?
 
 A post can be:
 
@@ -999,7 +999,7 @@ For example:
 
 A genuine recruiter advertising a 7-year Data Analyst position.
 
-That should be rejected for Dhiraj even though the post itself is genuine.
+That should be rejected for Tejal even though the post itself is genuine.
 
 ========================================================
 DO NOT OVER-REJECT
