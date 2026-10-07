@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tejal Mugul | Project Viewer</title>
+<style>
+:root{--navy:#102f3a;--cream:#f7f5f0;--muted:#68767b;--terracotta:#b86f4b}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);font-family:Arial,sans-serif;color:#263238}
+header{height:64px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+h1{font:600 24px Georgia,serif;margin:0}.back{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:8px 14px;border-radius:6px;font-size:12px}
+main{max-width:1400px;margin:auto;padding:28px 22px}.meta{margin-bottom:18px}.eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--terracotta);font-weight:700}.title{font:600 32px Georgia,serif;color:var(--navy);margin:5px 0}.note{color:var(--muted);font-size:13px;line-height:1.6}
+.frame{background:#fff;border:1px solid #e4e1da;border-radius:12px;overflow:hidden;box-shadow:0 8px 28px rgba(16,47,58,.08);min-height:78vh}
+iframe{display:block;width:100%;height:78vh;border:0}
+.message{padding:70px 30px;text-align:center}.message h2{font:600 28px Georgia,serif;color:var(--navy)}.message p{max-width:650px;margin:12px auto;color:var(--muted);line-height:1.7}
+@media(max-width:700px){.title{font-size:25px}.frame,iframe{min-height:70vh;height:70vh}}
+</style></head>
+<body><header><h1>Tejal Mugul · Project Viewer</h1><a class="back" href="proof-of-work.html">← Back to Proof of Work</a></header>
+<main><div class="meta"><div class="eyebrow" id="eyebrow">Portfolio Project</div><div class="title" id="title">Loading project…</div><div class="note" id="note">The project is displayed in the portfolio viewer. No project-file download is offered from this page.</div></div>
+<div class="frame" id="frame"></div></main>
+<script>
+const p=new URLSearchParams(location.search), file=p.get('file'), type=p.get('type')||'document', title=p.get('title')||'Project Preview';
+document.getElementById('title').textContent=title;
+const frame=document.getElementById('frame');
+if(type==='powerbi'){
+ frame.innerHTML='<div class="message"><h2>Interactive Power BI Dashboard</h2><p>This space is reserved for the published Power BI report. Once the report is published, its secure embed URL can be placed here so visitors interact with the dashboard directly on this page instead of receiving the PBIX file.</p></div>';
+}else if(file){
+ const src=location.origin+location.pathname.replace(/viewer\.html$/,'')+file.replace(/^\//,'');
+ const office='https://view.officeapps.live.com/op/embed.aspx?src='+encodeURIComponent(src);
+ frame.innerHTML='<iframe title="Project viewer" src="'+office+'" allowfullscreen></iframe>';
+}else{
+ frame.innerHTML='<div class="message"><h2>Project unavailable</h2><p>No viewer source was supplied.</p></div>';
+}
+</script></body></html>
