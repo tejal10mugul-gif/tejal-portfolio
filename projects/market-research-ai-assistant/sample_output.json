@@ -1,0 +1,48 @@
+{
+  "project": {
+    "industry": "Renewable energy",
+    "geography": "India",
+    "focus": "Solar power companies",
+    "research_goal": "Competitor benchmarking"
+  },
+  "executive_summary": "DEMO OUTPUT ONLY. This illustrates the report structure and is not verified market research.",
+  "company_profiles": [
+    {
+      "company": "Example Solar One (illustrative)",
+      "positioning": "Illustrative utility-scale solar developer",
+      "offering": "Solar project development and operations",
+      "evidence": "Demo placeholder — no source checked",
+      "confidence": "Low — illustrative only"
+    },
+    {
+      "company": "Example Green Energy (illustrative)",
+      "positioning": "Illustrative distributed energy provider",
+      "offering": "Commercial rooftop solar solutions",
+      "evidence": "Demo placeholder — no source checked",
+      "confidence": "Low — illustrative only"
+    }
+  ],
+  "comparison": [
+    {
+      "dimension": "Target customer",
+      "company_a": "Utility / large project (illustrative)",
+      "company_b": "Commercial rooftop (illustrative)"
+    },
+    {
+      "dimension": "Evidence status",
+      "company_a": "Not verified",
+      "company_b": "Not verified"
+    }
+  ],
+  "research_gaps": [
+    "Verify official company offerings.",
+    "Add dated source URLs for claims.",
+    "Avoid market-share estimates without a defensible methodology."
+  ],
+  "quality_check": {
+    "source_links_present": false,
+    "claims_verified": false,
+    "missing_data_flagged": true,
+    "human_review_required": true
+  }
+}
